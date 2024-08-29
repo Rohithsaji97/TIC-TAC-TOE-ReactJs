@@ -1,0 +1,147 @@
+body {
+  background-color: rgba(0, 0, 0, 0.899);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.712);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.heading {
+  text-align: center;
+}
+
+.cell {
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  position: relative;
+}
+
+.right-border {
+  border-right: 0.15em solid #15a7e5;
+}
+
+.bottom-border {
+  border-bottom: 0.15em solid #15a7e5;
+}
+
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.1;
+}
+
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.1;
+}
+
+.strike {
+  position: absolute;
+  background-color: rgb(237, 132, 4);
+  transition: all 0.5s ease;
+}
+
+.strike-row-1,
+.strike-row-2,
+.strike-row-3 {
+  width: 0;
+  height: 4px;
+}
+
+.strike-row-1 {
+  top: 15%;
+}
+
+.strike-row-2 {
+  top: 48%;
+}
+
+.strike-row-3 {
+  top: 83%;
+}
+
+.strike-column-1,
+.strike-column-2,
+.strike-column-3 {
+  width: 4px;
+  height: 0;
+}
+
+.strike-column-1 {
+  left: 15%;
+}
+
+.strike-column-2 {
+  left: 48%;
+}
+
+.strike-column-3 {
+  left: 83%;
+}
+
+.strike-diagonal-1,
+.strike-diagonal-2 {
+  width: 0;
+  height: 4px;
+}
+
+.strike-diagonal-1 {
+  top: 50%;
+  left: 5%;
+  transform: skewY(45deg);
+}
+
+.strike-diagonal-2 {
+  top: 50%;
+  left: 5%;
+  transform: skewY(-45deg);
+}
+
+.strike-row-1.strike-active,
+.strike-row-2.strike-active,
+.strike-row-3.strike-active {
+  width: 100%;
+}
+
+.strike-column-1.strike-active,
+.strike-column-2.strike-active,
+.strike-column-3.strike-active {
+  height: 100%;
+}
+
+.strike-diagonal-1.strike-active,
+.strike-diagonal-2.strike-active {
+  width: 90%;
+}
+
+.Game-over {
+  text-align: center;
+  border: #15a7e5 3px;
+  border-style: dotted;
+  padding: 10px;
+  margin-top: 50px;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.reset-button {
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #0074a6;
+  color: rgba(255, 255, 255, 0.712);
+  width: 100%;
+  font-size: 2em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bolder;
+}
